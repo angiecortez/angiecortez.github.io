@@ -25,9 +25,7 @@ header nav ul a {
   font-size: 24px;
   margin-right: 1.2rem;
 }
-
 /* clases reutilizables */
-
 .black {
   background-color: #393232;
   color: #fff;
@@ -40,7 +38,7 @@ header nav ul a {
 }
 /* arrow */
 .arrow::before{
-  content: '╲╱';
+  /* content: '╲╱'; */
   color: #fff;
   position: absolute;
   opacity: 0.7;
