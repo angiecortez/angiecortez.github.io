@@ -1,16 +1,9 @@
-/* seteo */
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Catamaran';
   -webkit-overflow-scrolling: #000000;
-}
-
-img[alt="brand"] {
-  height: 8vh;
-  max-width: 100%;
-  color: #fff;
 }
 
 section h1{
@@ -20,16 +13,20 @@ section h1{
 /* header */
 header nav ul a {
   background-color: rgba(0, 0, 0, 0);
-  color: #F7FAC8;
+  color: #fff;
   transition: 1s;
-  font-size: 24px;
+  font-size: 18px;
   margin-right: 1.2rem;
+}
+.collapse{
+  margin-left: 45%;
 }
 /* clases reutilizables */
 .black {
-  background-color: #393232;
+  background-color: #777115;
   color: #fff;
   transition: 1s;
+  text-decoration-color: #16160d;
 }
 
 .black-toggle {
@@ -38,7 +35,7 @@ header nav ul a {
 }
 /* arrow */
 .arrow::before{
-  /* content: '╲╱'; */
+  content: '╲╱';
   color: #fff;
   position: absolute;
   opacity: 0.7;
@@ -56,12 +53,12 @@ header nav ul a {
 }
 
 hr {
-  background-color: #187699;
+  background-color: #ff4fe1;
   height: 0.5vh;
   width: 30%;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 2rem;
+  border-radius: 1rem;
   position: relative;
   bottom: 0.7rem;
 }
@@ -70,16 +67,23 @@ hr {
   background-color: #ff4e50;
 }
 /* section-home */
-.section-home{
-  background-image: url("http://subirimagen.me/uploads/20180926115953.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: table;
+canvas {
+  height: 100vh;
+  width: 100vw;
 }
+.section-home figure {
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .section-home h1 {
   position: relative;
-  top: 11rem;
+  top: 50%;
   bottom: auto;
   color: #fff;
   font-weight: 600;
@@ -92,9 +96,10 @@ hr {
   position: relative;
   overflow: hidden;
 }
+
 /* section-about */
 .section-about{
-  padding-top: 3rem;
+  padding-top: 1rem;
 }
 
 .section-about img {
@@ -103,67 +108,74 @@ hr {
 }
 
 img[alt="about-img"] {
-  width: 50vw;
-  margin-top: 0.6rem;
+  margin-top: 4rem;
   max-width: 100%;
-}
-
-.section-about h4 {
-  text-align: center;
-  margin: 1rem;
-}
-.photo {
   width: 200px  !important;
   height: 200px !important;
   border-radius: 50%;
   border: .5px solid #fff;
   padding: 0em;
+  margin-right: 20%;
 }
 
-/* fin section-about */
+.section-about h4 {
+  /* text-align: right; */
+  margin: 1rem;
+    margin-left: -100px;
+}
 
 /* section-skills */
 .section-skills {
   height: 100vh;
-  background-color: #BEC2C2;
+  background-color: #fff;
 }
 
 .section-skills img {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
-  margin-top: 4rem;
-  height: 8vh;
-  text-align: center;
+  margin-top: 2rem;
+  height: 6vh;
+  /* text-align: center; */
+  justify-content:space-between;
 }
 
 .section-skills img:hover{
-  filter: sepia(70%);
+  filter: sepia(80%);
 }
 
 /* section-project */
 .card{
-  width: 30rem;
+  width: 15rem;
   overflow: hidden;
 }
 
-
 .section-project img {
-  height: 17vh;
-  width: auto;
-  margin: auto;
+  height: 20vh;
 }
+.medida{
+  /* border: 0.1rem solid #000; */
+  padding: 0.3rem;
+}
+.card-group{
+  display: flex;
+  justify-content: center;
+}
+
 /* section-contact */
 .section-contact {
-  height: 60vh;
+  height: 90vh;
   background-color: #BEC2C2;
+}
+.section-contact h1{
+  margin-top: 80px;
+  text-transform: uppercase;
 }
 .section-contact a{
   text-decoration: none;
 }
-
 .section-contact i {
   color: #383130;
-  margin-top: 4rem;
+  margin-top: 4.5rem;
   margin-right: 3rem;
   margin-left: 3rem;
 }
@@ -172,17 +184,46 @@ img[alt="about-img"] {
   transition: 1s;
   color: #837a76;
 }
-.section-contact p{
-  font-size: 24px;
-  font-family: Catamaran;
-}
 /*footer*/
-
 footer {
   padding-top: 0.3rem;
   padding: 0.5rem;
 }
-/* media query */
+
+@media screen and (max-width: 950px) {
+  .section-home h1{
+    font-size: 30px;
+    margin-top: 100px;
+  }
+  .navbar-toggler{
+    background-color: #777115;
+  }
+  .section-about h1{
+    font-size: 30px;
+  }
+  .section-about h4{
+    font-size: 18px;
+    margin-left: auto;
+    margin-top: 10%;
+    text-align: center;
+  }
+  img[alt="about-img"] {
+    margin-top: 1em;
+    margin-left: 20%;
+  }
+  .section-skills{
+    margin-top: 27%;
+  }
+  .phone {
+    display: none;
+  }
+  .section-home h1 {
+    top: 18rem;
+  }
+  .section-project a{
+    margin-top: 10px;
+  }
+}
 @media (min-width: 768px) {
   /* section skills */
   .section-skills img {
@@ -193,35 +234,11 @@ footer {
     margin-bottom: 2rem;
     margin-top: 1rem;
   }
-
   hr{
     width: 15%
   }
 }
 @media screen and (min-width:991px) {
-  /* general */
-  .phone {
-    display: none;
-  }
-
-  h1{
-    font-size: 3.5rem;
-  }
-
-  /* section-home */
-  .section-home h1 {
-    top: 18rem;
-  }
-
-  /* section-about */
-  img[alt="about-img"] {
-    margin-top: 0.6rem;
-    width: 20vw;
-    height: 40vh;
-  }
-  hr {
-    width: 8%;
-  }
   .section-about {
     height: 100vh;
   }
