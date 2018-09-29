@@ -7,7 +7,7 @@
 }
 
 section h1{
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 
 /* header */
@@ -19,11 +19,11 @@ header nav ul a {
   margin-right: 1.2rem;
 }
 .collapse{
-  margin-left: 45%;
+  margin-left: 40%;
 }
 /* clases reutilizables */
 .black {
-  background-color: #777115;
+  background-color: #827f81;
   color: #fff;
   transition: 1s;
   text-decoration-color: #16160d;
@@ -59,6 +59,17 @@ hr {
   margin-left: auto;
   margin-right: auto;
   border-radius: 1rem;
+  position: relative;
+  bottom: 0.7rem;
+}
+.hr-divide {
+  background-color: #ff4e50;
+  height: 0.1vh;
+  width: 50%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5rem;
   position: relative;
   bottom: 0.7rem;
 }
@@ -99,7 +110,7 @@ canvas {
 
 /* section-about */
 .section-about{
-  padding-top: 1rem;
+  padding-top: 3rem;
 }
 
 .section-about img {
@@ -120,27 +131,51 @@ img[alt="about-img"] {
 
 .section-about h4 {
   /* text-align: right; */
-  margin: 1rem;
+    margin: 1rem;
     margin-left: -100px;
 }
+.section-about .imagen {
+  margin-top: 1rem;
+  margin-left: 50px;
+  max-width: 100%;
+  width: 100px  !important;
+  height: 100px !important;
+  border-radius: 50%;
+  border: .5px solid #fff;
+  padding: 0em;
+  justify-content:center;
+  /* margin-right: 20%; */
+}
 
+.section-about .imagen:hover{
+  filter: sepia(50%);
+}
+.auto1{
+  float: left;
+  margin-left: 350px;
+}
 /* section-skills */
 .section-skills {
   height: 100vh;
   background-color: #fff;
+  /* margin-top: 4rem; */
+  padding-top: 3rem;
 }
 
 .section-skills img {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
-  margin-top: 2rem;
-  height: 6vh;
-  /* text-align: center; */
+  margin-top: 3rem;
+  height: 5vh;
   justify-content:space-between;
 }
 
 .section-skills img:hover{
   filter: sepia(80%);
+}
+.auto{
+  float: left;
+  justify-content: center;
 }
 
 /* section-project */
@@ -163,7 +198,7 @@ img[alt="about-img"] {
 
 /* section-contact */
 .section-contact {
-  height: 90vh;
+  height: 65vh;
   background-color: #BEC2C2;
 }
 .section-contact h1{
@@ -186,7 +221,7 @@ img[alt="about-img"] {
 }
 /*footer*/
 footer {
-  padding-top: 0.3rem;
+  padding-top: -10rem;
   padding: 0.5rem;
 }
 
@@ -197,6 +232,9 @@ footer {
   }
   .navbar-toggler{
     background-color: #777115;
+  }
+  .section-about{
+    margin-top: -10px;
   }
   .section-about h1{
     font-size: 30px;
@@ -210,12 +248,47 @@ footer {
   img[alt="about-img"] {
     margin-top: 1em;
     margin-left: 20%;
+    width: 130px  !important;
+    height: 130px !important;
   }
-  .section-skills{
+  .auto .imagen {
+    margin-top: 2rem;
+    max-width: 50%;
+    width: 60px  !important;
+    height: 60px !important;
+    border-radius: 50%;
+    padding: 0em;
+  }
+  .auto1{
+    float: right;
+  }
+  .hr-divide {
+    width: 50%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5rem;
+    position: relative;
+    bottom: 0.7rem;
+  }
+
+  .section-skills {
+    height: 100vh;
+    padding-top: 5rem;
     margin-top: 27%;
   }
-  .phone {
-    display: none;
+
+  .section-skills img {
+    padding-right: 0rem;
+    padding-left: 0rem;
+    margin-top: 4rem;
+    height: 6vh;
+  }
+  .derechaImg{
+    margin-left: 25px;
+  }
+  .derechaImg1{
+    margin-left: 30px;
   }
   .section-home h1 {
     top: 18rem;
