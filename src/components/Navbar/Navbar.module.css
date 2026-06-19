@@ -1,0 +1,123 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  transition: background 0.3s ease, border-bottom 0.3s ease;
+}
+
+.scrolled {
+  background: rgba(250, 248, 245, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.tilde {
+  font-family: var(--font-mono);
+  color: var(--primary);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.link:hover {
+  color: var(--text);
+}
+
+.cta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg-dark);
+  color: var(--primary);
+  padding: 7px 16px;
+  border-radius: var(--radius);
+  transition: opacity var(--transition);
+}
+
+.cta:hover {
+  opacity: 0.82;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.burger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 16px 24px;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: rgba(250, 248, 245, 0.98);
+    border-bottom: 0.5px solid var(--border);
+    padding: 8px 0;
+  }
+
+  .links.open {
+    display: flex;
+  }
+
+  .link, .cta {
+    width: 100%;
+    padding: 14px 24px;
+    border-radius: 0;
+    background: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+
+  .cta {
+    color: var(--primary);
+  }
+}
