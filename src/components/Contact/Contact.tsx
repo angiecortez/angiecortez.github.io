@@ -1,6 +1,11 @@
+import { useLang } from '../../context/LanguageContext'
+import { t } from '../../i18n/translations'
 import styles from './Contact.module.css'
 
 export function Contact() {
+  const { lang } = useLang()
+  const tr = t[lang].contact
+
   return (
     <section className={styles.section} id="contact">
       <div className={styles.container}>
@@ -11,21 +16,28 @@ export function Contact() {
 
         <div className={styles.body}>
           <div className={styles.left}>
-            <h2 className={styles.title}>Trabajemos juntos</h2>
-            <p className={styles.desc}>
-              ¿Tienes un proyecto en mente o quieres que me una a tu equipo?
-              Me encantaría escucharte.
-            </p>
+            <h2 className={styles.title}>{tr.title}</h2>
+            <p className={styles.desc}>{tr.desc}</p>
 
             <div className={styles.links}>
-              <a
-                href="mailto:angiecorteztay1@gmail.com"
-                className={styles.linkItem}
-              >
+              <a href="mailto:angiecorteztay1@gmail.com" className={styles.linkItem}>
                 <span className={styles.linkIcon}>✉</span>
                 <div>
                   <span className={styles.linkLabel}>Email</span>
                   <span className={styles.linkValue}>angiecorteztay1@gmail.com</span>
+                </div>
+              </a>
+
+              <a
+                href="https://wa.me/51946896796"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.linkItem}
+              >
+                <span className={styles.linkIcon}>📱</span>
+                <div>
+                  <span className={styles.linkLabel}>{tr.whatsapp}</span>
+                  <span className={styles.linkValue}>{tr.phone}</span>
                 </div>
               </a>
 
@@ -66,9 +78,9 @@ export function Contact() {
             </div>
             <div className={styles.termBody}>
               <p className={styles.termLine}>
-                <span className={styles.termDollar}>$</span> echo "Hola Angie!"
+                <span className={styles.termDollar}>$</span> {tr.echoCmd}
               </p>
-              <p className={styles.termOutput}>Hola Angie!</p>
+              <p className={styles.termOutput}>{tr.echoOut}</p>
               <p className={styles.termLine}>
                 <span className={styles.termDollar}>$</span> send --to angiecorteztay1@gmail.com
               </p>
@@ -81,19 +93,16 @@ export function Contact() {
               </p>
             </div>
             <div className={styles.ctaWrap}>
-              <a
-                href="mailto:angiecorteztay1@gmail.com"
-                className={styles.cta}
-              >
-                Enviar mensaje
+              <a href="mailto:angiecorteztay1@gmail.com" className={styles.cta}>
+                {tr.send}
               </a>
               <a
-                href="/assets/docs/angiecortez.pdf"
+                href={lang === 'es' ? '/assets/docs/angiecortez.pdf' : '/assets/docs/angiecortez-en.pdf'}
                 target="_blank"
                 rel="noreferrer"
                 className={styles.ctaAlt}
               >
-                Descargar CV
+                {tr.downloadCV}
               </a>
             </div>
           </div>

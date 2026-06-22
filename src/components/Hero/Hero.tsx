@@ -1,6 +1,15 @@
+import { useLang } from '../../context/LanguageContext'
+import { t } from '../../i18n/translations'
 import styles from './Hero.module.css'
 
 export function Hero() {
+  const { lang } = useLang()
+  const tr = t[lang]
+
+  const desc = tr.hero.desc
+    .replace('<b>', '<strong>').replace('</b>', '</strong>')
+    .replace('<hl>', `<span class="${styles.highlight}">`).replace('</hl>', '</span>')
+
   return (
     <section className={styles.hero} id="home">
       <div className={styles.container}>
@@ -29,26 +38,24 @@ export function Hero() {
               <span className={styles.termLabel}>output</span>
             </div>
             <div className={styles.termBody}>
-              <Line k="role"    v={'"Full Stack Developer"'}  color="string" />
-              <Line k="exp"     v={'"6+ años"'}               color="green"  />
-              <Line k="company" v={'"Thoughtworks"'}          color="green2" />
-              <Line k="stack"   v={'["React", "TypeScript", "Node.js"]'} color="array" />
-              <Line k="lang"    v={'["Español", "English"]'}  color="amber"  />
-              <Line k="location" v={'"Lima, Perú"'}           color="muted"  />
+              <Line k="role"     v={'"Full Stack Developer"'}           color="string" />
+              <Line k="exp"      v={tr.hero.expValue}                   color="green"  />
+              <Line k="company"  v={'"Thoughtworks"'}                   color="green2" />
+              <Line k="stack"    v={'["React", "TypeScript", "Node.js"]'} color="array" />
+              <Line k="lang"     v={tr.hero.langValue}                  color="amber"  />
+              <Line k="location" v={'"Lima, Perú"'}                     color="muted"  />
             </div>
           </div>
 
           <div className={styles.right}>
-            <p className={styles.desc}>
-              Más de <strong>6 años</strong> construyendo productos digitales con
-              React, TypeScript y Node.js. Actualmente en{' '}
-              <span className={styles.highlight}>Thoughtworks</span>, creando
-              experiencias que impactan a miles de personas en Latam.
-            </p>
+            <p
+              className={styles.desc}
+              dangerouslySetInnerHTML={{ __html: desc }}
+            />
             <div className={styles.ctas}>
-              <a href="#projects" className={styles.ctaPrimary}>Ver proyectos</a>
+              <a href="#projects" className={styles.ctaPrimary}>{tr.hero.viewProjects}</a>
               <a
-                href="/assets/docs/angiecortez.pdf"
+                href={lang === 'es' ? '/assets/docs/angiecortez.pdf' : '/assets/docs/angiecortez-en.pdf'}
                 target="_blank"
                 rel="noreferrer"
                 className={styles.ctaSecondary}
@@ -57,11 +64,11 @@ export function Hero() {
               </a>
             </div>
             <div className={styles.stats}>
-              <Stat num="6+" label="años exp." />
+              <Stat num="6+" label={tr.hero.yearsExp} />
               <div className={styles.statDiv} />
-              <Stat num="7" label="empresas" />
+              <Stat num="7" label={tr.hero.companies} />
               <div className={styles.statDiv} />
-              <Stat num="ES/EN" label="idiomas" />
+              <Stat num="ES/EN" label={tr.hero.languages} />
             </div>
           </div>
         </div>

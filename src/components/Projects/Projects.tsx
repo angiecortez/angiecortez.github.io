@@ -1,13 +1,18 @@
 import { projects } from '../../data'
+import { useLang } from '../../context/LanguageContext'
+import { t } from '../../i18n/translations'
 import styles from './Projects.module.css'
 
 export function Projects() {
+  const { lang } = useLang()
+  const tr = t[lang]
+
   return (
     <section className={styles.section} id="projects">
       <div className={styles.container}>
         <div className={styles.header}>
           <span className={styles.dollar}>$</span>
-          <span className={styles.cmd}>ls ./projects</span>
+          <span className={styles.cmd}>{tr.projects.cmd}</span>
         </div>
 
         <div className={styles.grid}>
@@ -25,7 +30,7 @@ export function Projects() {
 
               <div className={styles.info}>
                 <h3 className={styles.title}>{p.title}</h3>
-                <p className={styles.desc}>{p.description}</p>
+                <p className={styles.desc}>{p.description[lang]}</p>
                 <div className={styles.stack}>
                   {p.stack.map(s => (
                     <span key={s} className={styles.tag}>{s}</span>

@@ -1,13 +1,18 @@
 import { experience } from '../../data'
+import { useLang } from '../../context/LanguageContext'
+import { t } from '../../i18n/translations'
 import styles from './Experience.module.css'
 
 export function Experience() {
+  const { lang } = useLang()
+  const tr = t[lang]
+
   return (
     <section className={styles.section} id="experience">
       <div className={styles.container}>
         <div className={styles.header}>
           <span className={styles.dollar}>$</span>
-          <span className={styles.cmd}>git log --experience --oneline</span>
+          <span className={styles.cmd}>{tr.experience.cmd}</span>
         </div>
 
         <div className={styles.list}>
@@ -35,13 +40,13 @@ export function Experience() {
                   </div>
                 </div>
 
-                <p className={styles.desc}>{item.description}</p>
+                <p className={styles.desc}>{item.description[lang]}</p>
 
                 {item.achievements.length > 0 && (
                   <ul className={styles.achievements}>
                     {item.achievements.map((a, j) => (
                       <li key={j}>
-                        <span className={styles.arrow}>→</span> {a}
+                        <span className={styles.arrow}>→</span> {a[lang]}
                       </li>
                     ))}
                   </ul>
